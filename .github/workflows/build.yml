@@ -1,0 +1,23 @@
+name: Build du blog
+
+on:
+  push:
+    branches: [main]
+
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.128.0"
+
+      - name: Construire le site
+        run: hugo --minify
