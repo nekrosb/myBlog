@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<body>
+    <h1>{{ .Site.Title }}</h1>
+
+    <ul>
+        {{ range .Site.RegularPages }}
+        <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    </ul>
+
+</body>
+
+</html>
